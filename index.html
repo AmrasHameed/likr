@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VALENTINE'S DAY</title>
+<link rel="icon" type="image/png" sizes="100%" href="https://cdn-icons-png.flaticon.com/512/9444/9444300.png">
+<style>
+    body {
+      background-color: #fde7ea; /* light pink */
+      margin: 0;
+      padding: 0;
+    }
+    p {
+      text-align: center;
+      font-size: 32px;
+      font-family: Georgia, serif;
+      color: #ff1493; /* deep pink */
+    }
+    img {
+      display: block;
+      margin: 0 auto;
+      width: 40%; /* Increased size */
+      max-width: 600px; /* Added max-width for responsiveness */
+      height: auto; /* Maintain aspect ratio */
+    }
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+    button {
+      background-color: #ff69b4; /* hot pink */
+      color: white;
+      font-size: 24px;
+      border: none;
+      border-radius: 10px;
+      padding: 15px 30px; /* Increased padding */
+      cursor: pointer;
+      outline: none;
+      transition: background-color 0.3s;
+      margin: 0 10px; /* Added margin for spacing */
+    }
+    button:hover {
+      background-color: #ff1493; /* deep pink */
+    }
+    #message {
+      text-align: center;
+      font-size: 48px;
+      font-weight: 800;
+      margin-top: 20px;
+      color: #ff1493; /* deep pink */
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 20px; /* Adjust this value to change vertical position */
+    }
+  </style>
+</head>
+<body>
+<p id="text">Do you love me?</p>
+<img id="valentineImg" src="https://i.pinimg.com/originals/c0/bd/bf/c0bdbfc1f207b75c989557dc6495ad5a.gif" alt="Kiss GIF">
+<div class="button-container">
+  <button id="Button1">Yes!</button>
+  <button id="Button2">No</button>
+</div>
+<div id="message"></div>
+<script>
+  const Button1 = document.getElementById('Button1');
+  const Button2 = document.getElementById('Button2');
+  const messageDiv = document.getElementById('message');
+  const valentineImg = document.getElementById('valentineImg');
+  const text = document.getElementById('text');
+
+  Button1.addEventListener('click', function() {
+    messageDiv.textContent = 'I KNOW YOU DO!!😉';
+    valentineImg.style.display = "none";
+    text.style.display = "none";
+    Button1.style.display = "none";
+    Button2.style.display = "none";
+    document.body.style.backgroundImage = "url('https://gifdb.com/images/high/love-you-too-cat-orx5g96qa8dis5jt.gif')";
+  });
+
+  Button2.addEventListener('mouseover', function() {
+    const randomLeft = Math.random() * (window.innerWidth - this.clientWidth);
+    const randomTop = Math.random() * (window.innerHeight - this.clientHeight);
+    this.style.position = 'absolute'; // Ensure position is absolute
+    this.style.left = randomLeft + 'px';
+    this.style.top = randomTop + 'px';
+  });
+</script>
+</body>
+</html>
